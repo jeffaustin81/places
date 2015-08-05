@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Posts</title>
+    </head>
+    <body>
+        <h1>These are the places I have visited.</h1>
+
+        {% if places is not empty %}
+
+            <ul>
+                {% for place in places %}
+                <li>{{ place.getName }}</li>
+                <li>{{ place.getStay }}</li>
+                <li><img src = "{{ place.getPicture }}" ></li>
+
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form action='/' method='get'>
+            <button type='submit'>Back</button>
+        </form>
+
+    </body>
+</html>
