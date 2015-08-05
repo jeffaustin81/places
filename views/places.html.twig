@@ -1,35 +1,39 @@
 <html>
-<head>
-    <title>Places Visited</title>
-</head>
-<body>
-    <h1>Places Visited</h1>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <title>Places Visited</title>
+    </head>
+    <body>
+        <div class="container">
 
-    {% if places is not empty %}
+            <h1>Places Visited</h1>
 
-        <ul>
-            {% for place in places %}
-            <li>{{ place.getName }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+            {% if places is not empty %}
 
-    <form action='/places' method='post'>
-        <label for='name'>City Name</label>
-        <input id='name' name='name' type='text'>
-        <label for='picture'>Insert picture URL</label>
-        <input id='picture' name='picture' type='text'>
-        <label for='stay'>Enter Length of Stay</label>
-        <input id='stay' name='stay' type='text'>
+                <ul>
+                    {% for place in places %}
+                    <li>{{ place.getName }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
-        <button type='submit'>Add City</button>
-    </form>
-    <form action='deleteLast' method='post'>
-        <button type='submit'>Clear</button>
-    </form>
-    <form action='/places_posted' method='get'>
-        <button type='submit'>Extended View</button>
-    </form>
+            <form action='/places' method='post'class='form-group'>
+                <label for='name'>City Name</label>
+                <input id='name' name='name' type='text' class='form-control'>
+                <label for='picture'>Insert picture URL</label>
+                <input id='picture' name='picture' type='text' class='form-control class='btn btn-default''>
+                <label for='stay'>Enter Length of Stay</label>
+                <input id='stay' name='stay' type='text' class='form-control class='btn btn-default''>
+                <p></p>
+                <button type='submit' class='btn btn-default'>Add City</button>
+            </form>
+            <form action='deleteLast' method='post'>
+                <button type='submit' class='btn btn-default'>Clear</button>
+            </form>
+            <form action='/places_posted' method='get'>
+                <button type='submit' class='btn btn-default'>Extended View</button>
+            </form>
 
-</body>
+        </div>
+    </body>
 </html>

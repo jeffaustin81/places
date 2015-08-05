@@ -1,8 +1,11 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <title>Posts</title>
+    </style>
     </head>
     <body>
+        <div class="container">
         <h1>These are the places I have visited.</h1>
 
         {% if places is not empty %}
@@ -10,6 +13,7 @@
             <ul>
                 {% for place in places %}
                 <li>{{ place.getName }}</li>
+
                 <li>{{ place.getStay }}</li>
                 <li><img src = "{{ place.getPicture }}" ></li>
 
@@ -20,6 +24,6 @@
         <form action='/' method='get'>
             <button type='submit'>Back</button>
         </form>
-
+        </div>
     </body>
 </html>
